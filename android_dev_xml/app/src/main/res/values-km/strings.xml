@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">អេនដ្រោយអេប</string>
+    <string name="search">ស្វែងរក</string>
+    <string name="preference">ចូលចិត្ត</string>
+    <string name="recent_search">ការស្វែងរកថ្មី</string>
+    <string name="trending">ពេញនិយម</string>
+    <string name="justnow">អម្បាញមិញ</string>
+    <string name="addfriend">ស្នើជាមិត្ត</string>
+    <string name="back_navigation">ត្រឡប់ក្រយ</string>
+    <string name="friend">មិត្តភក្តិ</string>
+    <string name="edit_profile">កែប្រែប្រូហ្វាល់</string>
+    <string name="edit_info_detail">កែប្រែព័ត៌មានលម្អិតសាធារណះ</string>
+    <string name="student_at">សិក្សានៅ</string>
+    <string name="See_your_About_info">មើលព័តមានរបស់អ្នកលម្អិត</string>
+    <string name="Single">នូវលីវ</string>
+    <string name="Rating">75 វាយតម្លៃ</string>
+    <string name="age">អាយុ</string>
+    <string name="year">ឆ្នាំ</string>
+    <string name="References">ឯកសារយោង</string>
+    <string name="chat">ឆាត</string>
+    <string name="developer">អ្នកអភិវឌ្ឍន៍</string>
+    <string name="Royal_Academy">រាជបណ្ឌិត្យសភា</string>
+    <string name="preview">មើលជាមុន</string>
+    <string name="open">បើក</string>
+    <string name="Whatnew">អ្វីដែលថ្មី</string>
+    <string name="version">ជំនាន់ 4.01</string>
+    <string name="name_profile">ប្រូប៊ីន</string>
+    <string name="name_acc">ប្រូប៊ីន</string>
+
+<string name="fix">ការកែកំហុស និងធ្វើឲប្រសើរ</string>
+
+
+</resources>

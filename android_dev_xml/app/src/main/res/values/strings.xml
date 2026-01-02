@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">relative_layout</string>
+    <string name="search">Search_places</string>
+    <string name="preference"> Preference</string>
+    <string name="recent_search">Recent Search</string>
+    <string name="trending">Trending</string>
+    <string name="justnow">Just_now</string>
+    <string name="addfriend">Add Friend</string>
+    <string name="back_navigation">back_navigation</string>
+    <string name="friend">Friend</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="edit_info_detail">Edit public detail</string>
+    <string name="student_at">student at</string>
+    <string name="See_your_About_info">See your About info</string>
+    <string name="Single">Single</string>
+    <string name="Rating">75 Rating</string>
+    <string name="age">age</string>
+    <string name="year">Year old</string>
+    <string name="References">References</string>
+    <string name="chat">chat</string>
+    <string name="developer">Developer</string>
+    <string name="Royal_Academy">Royal Academy</string>
+    <string name="preview">Preview</string>
+    <string name="open">Open</string>
+    <string name="Whatnew">What\'s New</string>
+    <string name="version">Version 4.01</string>
+    <string name="fix">Bug fixes and general improvements.</string>
+    <string name="name_profile">Mr Bean</string>
+    <string name="name_acc">Mr Bean</string>
+</resources>
