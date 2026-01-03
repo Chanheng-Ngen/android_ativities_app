@@ -7,3 +7,4 @@ data class Profile(
     val profileImage: String,
     val coverImage: String,
 )
+

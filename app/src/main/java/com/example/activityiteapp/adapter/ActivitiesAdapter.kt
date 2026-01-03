@@ -15,6 +15,11 @@ class ActivitiesAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     var isGrid = false
     var dataSet = emptyList<Activities>()
 
+    private lateinit var onItemClickListener: (activities: Activities, id: Int) -> Unit
+
+    fun setOnItemClickListener(onItemClickListener: (activities: Activities, id: Int) -> Unit) {
+        this.onItemClickListener = onItemClickListener
+    }
     override fun getItemViewType(position: Int): Int {
         return if (isGrid) VIEW_TYPE_GRID else VIEW_TYPE_LIST
     }
@@ -31,9 +36,14 @@ class ActivitiesAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         }
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(
+        holder: RecyclerView.ViewHolder,
+        position: Int)
+    {
         val activity = dataSet[position]
-
+        holder.itemView.setOnClickListener {
+            onItemClickListener.invoke(activity, position)
+        }
         if (holder is ActivitiesListViewHolder) {
             holder.bindList(activity)
         } else if (holder is ActivitiesGridViewHolder) {

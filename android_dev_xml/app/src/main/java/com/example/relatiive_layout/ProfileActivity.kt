@@ -3,9 +3,10 @@ import android.util.Log
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.relatiive_layout.api.service.ApiService
 import com.example.relatiive_layout.databinding.ActivityFbProfileBinding
-import kotlinx.coroutines.GlobalScope
+import com.squareup.picasso.Picasso
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -35,15 +36,18 @@ class ProfileActivity : AppCompatActivity() {
 
     private fun loadAndDisplayProfile(){
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://fakestoreapi.com/")
+            .baseUrl("https://smlp-pub.s3.ap-southeast-1.amazonaws.com/final-2025/")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
         val apiService = retrofit.create(ApiService::class.java)
-        GlobalScope.launch {
+        lifecycleScope.launch {
             try{
                 val profile = apiService.getProfile()
-                binding.nameAcc.text = profile[0].title.trim().split(" ")[0];
-                binding.nameProfile.text = profile[0].title;
+                binding.firstName.text = profile.firstName
+                binding.lastName.text = profile.lastName
+                binding.major.text = profile.major
+                Picasso.get().load(profile.profileImage).into(binding.profileImage)
+                Picasso.get().load(profile.coverImage).into(binding.coverImage)
                 Log.d("[product]",  "$profile")
             }catch (ex: Exception){
                 Log.d("[profile-activity]", "loading profile error ${ex.message}")

@@ -1,4 +1,5 @@
 package com.example.activityiteapp.api.model
+import java.io.Serializable
 
 data class Activities(
     val  id: Int,
@@ -7,4 +8,4 @@ data class Activities(
     val year: Int,
     val imageUrl: String,
     val description: String,
-)
+) : Serializable

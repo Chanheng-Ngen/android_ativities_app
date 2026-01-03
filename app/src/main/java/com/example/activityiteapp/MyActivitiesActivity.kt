@@ -1,5 +1,6 @@
 package com.example.activityiteapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -65,9 +66,14 @@ class MyActivitiesActivity : AppCompatActivity() {
     private fun displayActivities(activities: List<Activities>) {
         adapter = ActivitiesAdapter()
         adapter.dataSet = activities
-
+        adapter.setOnItemClickListener { activitie, position ->
+//            Toast.makeText(this@MyActivitiesActivity, activities.id.toString(), Toast.LENGTH_SHORT).show()4
+            val intent = Intent(this@MyActivitiesActivity, MyActivitiesDetailActivity::class.java)
+            intent.putExtra("Activities", activitie)
+            startActivity(intent)
+        }
         binding.rclAct.adapter = adapter
-        binding.rclAct.layoutManager = LinearLayoutManager(this) // default list
+        binding.rclAct.layoutManager = LinearLayoutManager(this)
     }
 
 
@@ -76,7 +82,6 @@ class MyActivitiesActivity : AppCompatActivity() {
             isGrid = !isGrid
 
             adapter.isGrid = isGrid   // 🔥 IMPORTANT
-            adapter.notifyDataSetChanged()
 
             if (isGrid) {
                 binding.rclAct.layoutManager = GridLayoutManager(this, 2)
