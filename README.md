@@ -1,1 +1,68 @@
-Activity ITE App (Student Activity Tracker)A native Android application designed to track, display, and filter academic and extracurricular activities for students. This project is developed using Kotlin and follows modern Android development practices.📱 Project OverviewThe main purpose of this application is to allow students (specifically targeting ITE/RUPP context) to view their profile and a list of activities they have participated in. The app fetches data from a remote API and allows filtering based on academic years.✨ Key Features•User Profile: Displays a visual profile with a cover image, profile picture, name, and bio.•Activity Feed: A scrollable list (RecyclerView) of activities.•Year Filtering: Interactive filter bar to sort activities by Year 1, Year 2, Year 3, or Year 4.•Dynamic Image Loading: Efficient image caching and loading using Picasso.•API Integration: Fetches dynamic data using Retrofit.•Modern UI: specific layouts using CardView, RelativeLayout, and rounded corners for a clean aesthetic.🛠 Tech Stack & LibrariesThis project uses the following libraries and technologies:•Language: Kotlin•Minimum SDK: (Adjust based on your build.gradle, usually 21+)•View Binding: For safer interaction with XML views.•Networking:•Retrofit 2 (v3.0.0) - HTTP client.•GSON Converter (v3.0.0) - JSON serialization/deserialization.•Image Loading:•Picasso (v2.8) - Image downloading and caching.•UI Components:•androidx.recyclerview - For listing data.•androidx.cardview - For container styling.•androidx.constraintlayout & RelativeLayout - For complex layouts.•Google Material Design - For standard UI components.📂 Project Structure•ActivitiesAdapter.kt: Handles the binding of activity data to the RecyclerView list.•MyActivitiesActivity.kt: The main controller for the profile and activity list screen. Handles API calls and filtering logic.•activity_my_activities.xml: The layout file containing the profile header, filter tabs, and the activity list.•api/: Contains Retrofit interfaces and model classes (e.g., Activities.kt).🚀 Getting Started1.Clone the repository:Kotlingit clone https://github.com/Chanheng-Ngen/android_ativities_app.git .Open in Android Studio: Open Android Studio and select "Open an existing project", pointing to the cloned folder.3.Sync Gradle: Allow Android Studio to download the necessary dependencies.4.Configure API: Ensure the Base URL in your Retrofit client is pointing to your running backend server.5.Run the App: Connect a device or start an emulator and click "Run".🧩 How Filtering WorksThe MyActivitiesActivity contains a filter bar with four options (Year 1 - Year 4).1.When a user clicks a year (e.g., "Year 2"), the text color updates to indicate selection.2.The Adapter filters the main list of activities to show only those matching the selected year.3.If no activities are found, a "Not Found" message is displayed.👤 Author•Ngen Chanheng(SMUEK) (RUPP - Year 3 Software Engineer)📄 LicenseThis project is for educational purposes.
+# Activity ITE App (Student Activity Tracker)
+
+A native Android application designed to track, display, and filter academic and extracurricular activities for students. Developed using **Kotlin** and following modern Android development practices.
+
+## Project Overview
+
+The app allows students (targeting ITE/RUPP context) to view their profile and a list of activities they have participated in. It fetches data from a remote API and allows filtering based on academic years.
+
+## Key Features
+
+- **User Profile:** Displays cover image, profile picture, name, and bio.  
+- **Activity Feed:** Scrollable list of activities using RecyclerView.  
+- **Year Filtering:** Filter activities by Year 1, Year 2, Year 3, or Year 4.  
+- **Dynamic Image Loading:** Efficient image caching with Picasso.  
+- **API Integration:** Fetches data dynamically using Retrofit.  
+- **Modern UI:** Clean design using CardView, RelativeLayout, and rounded corners.  
+
+## Tech Stack & Libraries
+
+- **Language:** Kotlin  
+- **Minimum SDK:** 21+  
+- **View Binding** for safer XML interaction  
+- **Networking:** Retrofit 2 + GSON Converter  
+- **Image Loading:** Picasso  
+- **UI Components:** RecyclerView, CardView, ConstraintLayout, RelativeLayout, Material Design  
+
+## Project Structure
+
+├─ api/ # Retrofit interfaces and model classes (e.g., Activities.kt)
+├─ adapter/ # ActivitiesAdapter.kt
+├─ MyActivitiesActivity.kt # Main activity for profile and activity list
+├─ res/layout/ # activity_my_activities.xml
+└─ res/values/ # colors, styles, etc.
+
+markdown
+Copy code
+
+- **ActivitiesAdapter.kt:** Binds activity data to RecyclerView.  
+- **MyActivitiesActivity.kt:** Handles API calls, filtering, and UI logic.  
+- **activity_my_activities.xml:** Layout with profile header, filter tabs, and activity list.  
+
+## Getting Started
+
+1. **Clone the repository:**
+```bash
+git clone https://github.com/Chanheng-Ngen/android_ativities_app.git
+Open in Android Studio: Select "Open an existing project".
+
+Sync Gradle: Let Android Studio download dependencies.
+
+Configure API: Set the Base URL in Retrofit to your backend server.
+
+Run the App: Connect a device or start an emulator and run.
+
+How Filtering Works
+The filter bar allows users to select Year 1–4.
+
+Clicking a year updates the text color to indicate selection.
+
+The adapter filters the activity list for the selected year.
+
+If no activities exist for the year, a "Not Found" message is displayed.
+
+Author
+Ngen Chanheng (SMUEK) – RUPP, Year 3 Software Engineer
+
+License
+This project is for educational purposes.
