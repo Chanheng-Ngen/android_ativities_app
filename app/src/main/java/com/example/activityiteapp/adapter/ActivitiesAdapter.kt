@@ -1,5 +1,6 @@
 package com.example.activityiteapp.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -13,7 +14,15 @@ class ActivitiesAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val VIEW_TYPE_GRID = 2
 
     var isGrid = false
-    var dataSet = emptyList<Activities>()
+    private var dataSet = emptyList<Activities>()
+    private var displayData = emptyList<Activities>()
+
+     fun setData (activities: List<Activities>) {
+        dataSet = activities
+        displayData = activities
+         notifyDataSetChanged()
+    }
+
 
     private lateinit var onItemClickListener: (activities: Activities, id: Int) -> Unit
 
@@ -40,7 +49,7 @@ class ActivitiesAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         holder: RecyclerView.ViewHolder,
         position: Int)
     {
-        val activity = dataSet[position]
+        val activity = displayData[position]
         holder.itemView.setOnClickListener {
             onItemClickListener.invoke(activity, position)
         }
@@ -51,5 +60,12 @@ class ActivitiesAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         }
     }
 
-    override fun getItemCount(): Int = dataSet.size
+    override fun getItemCount(): Int = displayData.size
+
+    fun filterByYear(year: Int) : Int {
+        displayData = dataSet.filter { it.year == year }
+        notifyDataSetChanged()
+        return displayData.size
+    }
+
 }
