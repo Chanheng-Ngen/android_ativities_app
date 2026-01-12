@@ -67,6 +67,8 @@ class MyActivitiesActivity : AppCompatActivity() {
                 binding.lastName.text = profile.lastName
                 Picasso.get().load(profile.profileImage).into(binding.profileImg)
                 Picasso.get().load(profile.coverImage).into(binding.coverImage)
+                binding.major.text = profile.major
+                binding.generation.text = profile.generation
             }catch (error: Exception){
                 Log.d("[get-profile]", "loading profile ${error.message}")
             }
@@ -106,7 +108,7 @@ class MyActivitiesActivity : AppCompatActivity() {
         binding.grid.setOnClickListener {
             isGrid = !isGrid
 
-            adapter.isGrid = isGrid   // 🔥 IMPORTANT
+            adapter.isGrid = isGrid
 
             if (isGrid) {
                 binding.rclAct.layoutManager = GridLayoutManager(this, 2)

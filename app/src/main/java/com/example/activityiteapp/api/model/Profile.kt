@@ -6,5 +6,7 @@ data class Profile(
     val lastName: String,
     val profileImage: String,
     val coverImage: String,
+    val major: String,
+    val generation: String,
 )
 
